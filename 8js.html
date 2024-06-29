@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Pattern</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+    <h2>Print Pattern</h2>
+    <pre id="output"></pre>
+
+    <script>
+        function calculateSeries() {
+          const n = document.getElementById("n").value;
+          let result = 0;
+          let sign = 1;
+          let i = 1;
+          while (i <= n) {
+            const factorial = getFactorial(i);
+            result += sign * factorial / i;
+            sign *= -1;
+            i++;
+          }
+          document.getElementById("result").innerHTML = `The result is: ${result}`;
+        }
+    
+        function getFactorial(n) {
+          let result = 1;
+          for (let i = 2; i <= n; i++) {
+            result *= i;
+          }
+          return result;
+        }
+      </script>
+    
+    <!-- <script>
+        // Function to print the pattern
+        function printPattern() {
+            var output = ''; // Variable to store the output pattern
+            var row = 1; // Initialize the row number
+            
+            // Loop to generate each row of the pattern
+            while (row <= 3) { // Adjust the number of rows as needed
+                var stars = ''; // Variable to store stars for the current row
+                var count = 1; // Initialize the star count
+                
+                // Loop to generate stars for the current row
+                while (count <= row) {
+                    stars += '*'; // Add a star to the current row
+                    count++; // Increment the star count
+                }
+                
+                // Add the current row to the output with a newline
+                output += stars + '\n';
+                row++; // Move to the next row
+            }
+            
+            // Display the generated pattern in the pre element
+            document.getElementById('output').textContent = output;
+        }
+        
+        // Call the function when the page loads
+        printPattern();
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- wap sum of any no. of factorial input taken from user. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+body>
+  <h1>Factorial Calculator</h1>
+  <label for="number">Enter a number:</label>
+  <input type="number" id="number"><br><br>
+  <button type="button" onclick="calculateFactorial()">Calculate Factorial</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateFactorial() {
+      const number = document.getElementById("number").value;
+      let factorial = 1;
+      let i = 1;
+
+      while (i <= number) {
+        factorial *= i;
+        i++;
+      }
+
+      document.getElementById("result").innerHTML = `The factorial of ${number} is: ${factorial}`;
+    }
+  </script>
+</body>
+</html>

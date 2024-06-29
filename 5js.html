@@ -1,0 +1,62 @@
+<!-- wap to find the factorial of any number input taken from user. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    input[type="number"] {
+      width: 50%;
+      height: 30px;
+      font-size: 18px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #333b33;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #323632;
+    }
+    #result {
+      font-size: 24px;
+      font-weight: bold;
+      color: #666;
+      margin-top: 20px;
+    }
+  </style>
+<body>
+  <h1>Factorial Calculator</h1>
+  <input type="number" id="num" placeholder="Enter a number">
+  <button onclick="calculateFactorial()">Calculate Factorial</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateFactorial() {
+      var num = document.getElementById("num").value;
+      let factorial = 1;
+      let i = 1;
+      while (i <= num) {
+        factorial *= i;
+        i++;
+      }
+      document.getElementById("result").innerHTML = `The factorial of ${num} is ${factorial}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Sequence</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    pre {
+        white-space: pre-wrap; /* Ensures that whitespace is preserved */
+    }
+</style>
+</head>
+<body>
+    <h2>Generate Sequence</h2>
+    <pre id="output"></pre>
+
+    <script>
+        // Function to generate the sequence and display it
+        function generateSequence() {
+            var output = ''; // Variable to store the output sequence
+            var n = 1; // Starting number of the sequence
+            var increment = 1; // Initial increment value
+
+            // Initialize variables for the sequence
+            var currentNumber = 1;
+            var count = 1;
+
+            // Generate the sequence using a while loop
+            while (count <= 6) { // Adjust the number of terms as needed
+                output += currentNumber + ', '; // Add current number to output
+
+                // Update variables for the next number in the sequence
+                currentNumber += increment;
+                increment++;
+
+                count++; // Increment count
+            }
+
+            // Remove the last comma and space from the output
+            output = output.slice(0, -2);
+
+            // Display the generated sequence in the pre element
+            document.getElementById('output').textContent = output;
+        }
+        
+        // Call the function when the page loads
+        generateSequence();
+    </script>
+</body>
+</html>

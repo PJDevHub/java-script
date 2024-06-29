@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factorial Calculation</title>
+<!-- <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    input[type="number"] {
+        padding: 8px;
+        width: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    #result {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+</style> -->
+</head>
+<body>
+    <h2>Factorial Calculation</h2>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" min="1" required>
+    <button onclick="calculate()">Calculate</button>
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            var num = parseInt(document.getElementById('number').value);
+            var expressionResult = calculateExpression(num);
+            document.getElementById('result').innerHTML = "Result: " + expressionResult;
+        }
+
+        function calculateExpression(n) {
+            var result = 0;
+            var sign = 1; // To alternate between + and -
+            var factorial = 1;
+
+            // Using a while loop to iterate through each number from 1 to n
+            while (n > 0) {
+                factorial *= n; // Calculate factorial of current number
+                result += sign * factorial / n; // Add to result with appropriate sign
+                sign *= -1; // Toggle sign for the next iteration
+                n--; // Decrement n for the next factorial and division
+            }
+
+            return result.toFixed(2); // Return result rounded to 2 decimal places
+        }
+    </script>
+</body>
+</html>

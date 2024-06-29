@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Pattern</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    pre {
+        white-space: pre-wrap; /* Ensures that whitespace is preserved */
+    }
+</style>
+</head>
+<body>
+    <h2>Print Pattern</h2>
+    <pre id="output"></pre>
+
+    <script>
+        // Function to print the pattern
+        function printPattern() {
+            var output = ''; // Variable to store the output pattern
+            var n = 3; // Number of lines for the upper triangle (adjust as needed)
+            var i = 0;
+
+            // Upper Triangle
+            while (i < n) {
+                var j = 0;
+                // Leading spaces
+                while (j < n - i - 1) {
+                    output += ' ';
+                    j++;
+                }
+                
+                var k = 0;
+                // Stars
+                while (k < 2 * i + 1) {
+                    output += '*';
+                    if (k < 2 * i) {
+                        output += ' ';
+                    }
+                    k++;
+                }
+                
+                // New line after each row
+                output += '\n';
+                i++;
+            }
+            
+            // Lower Triangle
+            i = n - 2;
+            while (i >= 0) {
+                var j = 0;
+                // Leading spaces
+                while (j < n - i - 1) {
+                    output += ' ';
+                    j++;
+                }
+                
+                var k = 0;
+                // Stars
+                while (k < 2 * i + 1) {
+                    output += '*';
+                    if (k < 2 * i) {
+                        output += ' ';
+                    }
+                    k++;
+                }
+                
+                // New line after each row, except the last one
+                if (i > 0) {
+                    output += '\n';
+                }
+                
+                i--;
+            }
+
+            // Display the generated pattern in the pre element
+            document.getElementById('output').textContent = output;
+        }
+        
+        // Call the function when the page loads
+        printPattern();
+    </script>
+</body>
+</html>
