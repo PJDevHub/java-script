@@ -1,0 +1,56 @@
+<!-- SWITCH CASE IN JAVASCRIPT -->
+
+
+ <!-- WAP using switch case to make a calculator using switch case in javascript-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>Calculator using javascript</h1>
+    <p id="show"></p>
+    <script>
+                    
+      // Get the user input
+const num1 = parseFloat(prompt("Enter the first number: "));
+const operator = prompt("Enter the operator (+, -, *, /): ");
+const num2 = parseFloat(prompt("Enter the second number: "));
+
+// Perform the calculation using switch case
+let result;
+switch (operator) {
+  case "+":
+    result = num1 + num2;
+    break;
+  case "-":
+    result = num1 - num2;
+    break;
+  case "*":
+    result = num1 * num2;
+    break;
+  case "/":
+    if (num2 === 0) {
+      alert("Error: cannot divide by zero!");
+    } else {
+      result = num1 / num2;
+    }
+    break;
+  default:
+    alert("Error: invalid operator!");
+}
+
+// Display the result
+if (result !== undefined) {
+  alert(`The result is: ${result}`);
+}
+    </script>
+ </body>
+ </html>
+
+
+ <!-- create a  single page website using js with responsive and using js function
+  note : must contain header , footer and three section and use some toggling effect on section ,header and footer
+  note : nav bar should be hammer menu-->

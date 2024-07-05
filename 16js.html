@@ -1,0 +1,40 @@
+<!-- 1. wap to findout how many words are similar in string "helllooabcbefdde"
+ note: also show that how many times the number is repeating -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Characte Counter In A String</h1>
+    <p>String: "helllooabcbefdde"</p>
+    <button onclick="countChar()">Count Characters</button>
+    <pre id="output"></pre>
+
+    <script>
+        alert("Doy you want to see it ")
+        function countChar() {
+            const str = "helllooabcbefdde";
+            const charCount = {};
+
+            for (const char of str) {
+                if (charCount[char]) {
+                    charCount[char]++;
+                } else {
+                    charCount[char] = 1;
+                }
+            }
+
+            let output = "Character frequencies:\n";
+            for (const char in charCount) {
+                output += `${char}: ${charCount[char]}\n`;
+            }
+
+            document.getElementById('output').textContent = output;
+        }
+    </script>
+</body>
+</html>
