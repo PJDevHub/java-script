@@ -50,13 +50,14 @@
 
             // Using a while loop to iterate through each number from 1 to n
             while (n > 0) {
-                factorial *= n; // Calculate factorial of current number
-                result += sign * factorial / n; // Add to result with appropriate sign
-                sign *= -1; // Toggle sign for the next iteration
-                n--; // Decrement n for the next factorial and division
+                factorial *= n; 
+                // result += sign * factorial / n;
+                result += sign * factorial / n;
+                sign *= -1; 
+                n--; 
             }
 
-            return result.toFixed(2); // Return result rounded to 2 decimal places
+            return result.toFixed(2); 
         }
     </script>
 </body>
